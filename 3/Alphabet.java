@@ -1,6 +1,3 @@
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
-
 public class Alphabet {
     private char[] lowercase;
     private char[] uppercase;

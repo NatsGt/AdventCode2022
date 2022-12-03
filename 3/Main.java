@@ -14,8 +14,9 @@ public class Main {
             }
             scanner.close();
             // rucksack.print();
-            // rucksack.getRepeatedChar();
-            // var res = rucksack.getScore();
+            rucksack.getRepeatedChar();
+            var res1 = rucksack.getScore();
+            System.out.println(res1);
             group.divideIntoGroups();
             group.getRepeatedChar();
             // group.print();
