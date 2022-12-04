@@ -42,4 +42,22 @@ public class TaskList {
         }
         return count;
     }
+
+    public int countOverlaped() {
+        int count = 0;
+        for (List<String[]> list : tasks) {
+            var firstList = list.get(0);
+            var secondList = list.get(1);
+            var firstLimit = Integer.parseInt(firstList[0]);
+            var firstEndLimit = Integer.parseInt(firstList[1]);
+            var secondLimit = Integer.parseInt(secondList[0]);
+            var secondEndLimit = Integer.parseInt(secondList[1]);
+            if (secondLimit <= firstEndLimit && secondEndLimit >= firstEndLimit) {
+                count++;
+            } else if (firstLimit <= secondEndLimit && firstEndLimit >= secondEndLimit) {
+                count++;
+            }
+        }
+        return count;
+    }
 }

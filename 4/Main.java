@@ -13,7 +13,10 @@ public class Main {
             scn.close();
             int res = taskList.countRepeated();
             System.out.println(res);
+            int res2 = taskList.countOverlaped();
+            System.out.println(res2);
         } catch (Exception e) {
+            System.out.println(e);
             // TODO: handle exception
         }
     }
