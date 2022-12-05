@@ -47,7 +47,7 @@ public class Container {
     }
 
     public void readInstructions() {
-        Pattern pattern2 = Pattern.compile("(\\d)");
+        Pattern pattern2 = Pattern.compile("(\\d+)");
         for (String string : instructions) {
             Matcher number = pattern2.matcher(string);
             List<Integer> steps = new ArrayList<>();
@@ -65,9 +65,7 @@ public class Container {
 
         if (containers.get(from) != null) {
             fromContainer.addAll(containers.get(from));
-            if (containers.get(to) != null) {
-                toContainer.addAll(containers.get(to));
-            }
+            toContainer.addAll(containers.get(to));
 
             int loops = 1;
             while (loops <= amount) {
