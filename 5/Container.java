@@ -60,21 +60,28 @@ public class Container {
     }
 
     public void moveBoxes(int amount, int from, int to) {
-        List<String> boxes = containers.get(from);
-        if (boxes.size() >= amount) {
-            var boxesToMove = boxes.subList(0, amount);
-            List<String> newBoxesList = containers.get(to);
-            for (String box : boxesToMove) {
-                newBoxesList.add(0, box);
-            }
-            containers.replace(to, newBoxesList);
-            if (boxes.size() > 1) {
-                containers.replace(from, boxes.subList(amount, boxes.size()));
-            } else {
-                containers.replace(from, new ArrayList<>());
-            }
-        }
+        List<String> fromContainer = new ArrayList<>();
+        List<String> toContainer = new ArrayList<>();
 
+        if (containers.get(from) != null) {
+            fromContainer.addAll(containers.get(from));
+            if (containers.get(to) != null) {
+                toContainer.addAll(containers.get(to));
+            }
+
+            int loops = 1;
+            while (loops <= amount) {
+                if (fromContainer.size() > 0 && fromContainer.size() >= amount - loops) {
+                    toContainer.add(0, fromContainer.get(0));
+                    fromContainer.remove(0);
+                }
+                loops++;
+
+            }
+            containers.replace(from, fromContainer);
+            containers.replace(to, toContainer);
+
+        }
     }
 
     public String getTopBoxes() {

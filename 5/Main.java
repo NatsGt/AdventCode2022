@@ -42,9 +42,10 @@ public class Main {
             // container.print();
             container.readInstructions();
             container.print();
-            // var res = container.getTopBoxes();
-            // System.out.println(res);
+            var res = container.getTopBoxes();
+            System.out.println(res);
         } catch (Exception e) {
+            System.out.println(e);
             // TODO: handle exception
         }
 
