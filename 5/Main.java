@@ -41,7 +41,7 @@ public class Main {
             }
             // container.print();
             container.readInstructions();
-            container.print();
+            // container.print();
             var res = container.getTopBoxes();
             System.out.println(res);
         } catch (Exception e) {
